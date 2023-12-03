@@ -5,3 +5,16 @@ sources:
     tables:
     - name: users
     - name: transactions
+
+models:
+  - name: valid_transactions
+    columns:
+    - name: transaction_time
+      constraints:
+      - type: not_null
+    - name: transaction_type
+      constraints:
+      - type: not_null
+    - name: user_id
+      constraints:
+      - type: not_null
