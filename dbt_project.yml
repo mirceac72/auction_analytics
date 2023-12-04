@@ -27,16 +27,15 @@ vars:
   # These variables are available for the entire auction_analytics project
   top_n: 10
   financial_date: '2022-08-12'
+  # Maximum difference in between event time and processing time in minutes
+  max_latency: 60
 
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
-# In this example config, we tell dbt to build all models in the example/
-# directory as views. These settings can be overridden in the individual model
-# files using the `{{ config(...) }}` macro.
 models:
   auction_analytics:
     # Config indicated by + and applies to all files under models/example/
-    example:
+    auction:
       +materialized: view

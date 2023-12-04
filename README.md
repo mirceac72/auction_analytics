@@ -28,6 +28,7 @@ The ClickHouse [SumMergeTree]() engine is used in order to achive this effective
 
 - dbt compile (Compile SQL statements including the ones from analyses section)
 - dbt run
+- dbt run --full-refresh (full processing for the incremental materialisations) 
 
 ## Steps
 
