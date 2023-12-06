@@ -11,7 +11,7 @@ valid_tr.user_id AS user_id,
 argMax(valid_tr.amount_eur, received_at) AS trading_volume -- remove potential duplicates by keeping the latest received_at
 FROM {{ref('valid_transactions')}} AS valid_tr
 WHERE valid_tr.transaction_type = 'trade'
-AND financial_date <= toDate(subtractMinutes(now(), {{var('max_latency')}})) - 1
+AND financial_date <= toDate(subtractMinutes(parseDateTimeBestEffortOrNull('{{var('current_time')}}'), {{var('max_latency')}})) - 1
 {% if is_incremental() %}
 AND financial_date > (SELECT max(financial_date) FROM {{this}})
 {% endif %}

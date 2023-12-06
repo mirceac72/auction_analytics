@@ -29,6 +29,8 @@ vars:
   financial_date: '2022-08-12'
   # Maximum difference in between event time and processing time in minutes
   max_latency: 60
+  # Current time when the dbt project is executed
+  current_time: '2022-08-11T11:15:00'
 
 
 # Configuring models
